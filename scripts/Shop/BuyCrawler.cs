@@ -20,7 +20,7 @@ public class BuyCrawler : MonoBehaviour
         if(silicon >= 50)
         {
             crawler++;
-            amount.text = "Crawler bring 1 silicone in secend (+1 sil/sec) \nYou have " + crawler + " crawler(s).";
+            amount.text = "Crawler bring 1 silicone in secend (+1 sil/sec)\nprice: 50\nYou have " + crawler + " crawler" + (crawler == 1 ? "" : "s") + ".";
             silicon -= 50;
             PlayerPrefs.SetInt("silic", silicon);
             PlayerPrefs.Save();
