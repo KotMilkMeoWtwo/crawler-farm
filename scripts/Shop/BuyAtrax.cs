@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuyCrawler : MonoBehaviour
+public class BuyAtrax : MonoBehaviour
 {
-    private int crawler;
+    private int atrax;
     public Text amount;
     private int silicon;
     public Text silic;
@@ -13,16 +13,16 @@ public class BuyCrawler : MonoBehaviour
     public void Start()
     {
         silicon = PlayerPrefs.GetInt("silic");
-        crawler = PlayerPrefs.GetInt("crawler");
-        amount.text = "Crawler bring 1 silicone in 10 second (+1 sil/10 sec)\nprice: 50\nYou have " + crawler + " crawler" + (crawler == 1 ? "" : "s") + ".";
+        atrax = PlayerPrefs.GetInt("atrax");
+        amount.text = "Atrax bring 1 silicone in 5 second (+1 sil/5 sec)\nprice: 200\nYou have " + atrax + " atrax" + (atrax == 1 ? "" : "s") + ".";
     }
     void OnMouseDown()
     {
-        if(silicon >= 50)
+        if (silicon >= 200)
         {
-            crawler++;
-            amount.text = "Crawler bring 1 silicone in 10 second (+1 sil/10 sec)\nprice: 50\nYou have " + crawler + " crawler" + (crawler == 1 ? "" : "s") + ".";
-            silicon -= 50;
+            atrax++;
+            amount.text = "Atrax bring 1 silicone in 5 second (+1 sil/5 sec)\nprice: 200\nYou have " + atrax + " atrax" + (atrax == 1 ? "" : "s") + ".";
+            silicon -= 200;
             PlayerPrefs.SetInt("silic", silicon);
             PlayerPrefs.Save();
         }
@@ -30,17 +30,17 @@ public class BuyCrawler : MonoBehaviour
     void Update()
     {
         UpdateDelta += Time.deltaTime;
-        if (UpdateDelta >= 10f)
+        if (UpdateDelta >= 5f)
         {
             UpdateDelta = 0;
-            if (crawler >= 1)
+            if (atrax >= 1)
             {
-                silicon += 1 * crawler;
+                silicon += 1 * atrax;
             }
         }
         silic.text = "Silicone: " + silicon;
 
-        PlayerPrefs.SetInt("crawler", crawler);
+        PlayerPrefs.SetInt("atrax", atrax);
         PlayerPrefs.SetInt("silic", silicon);
         PlayerPrefs.Save();
     }

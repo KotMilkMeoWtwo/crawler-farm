@@ -9,9 +9,10 @@ public class ButtonClick : MonoBehaviour
     public Text sil;
     private int crawler;
     float UpdateDelta;
-
+    private int atrax;
     void Start()
     {
+        atrax = PlayerPrefs.GetInt("atrax");
         crawler = PlayerPrefs.GetInt("crawler");
         silicon = PlayerPrefs.GetInt("silic");
         sil.text = "Silicone: " + silicon;
@@ -23,16 +24,25 @@ public class ButtonClick : MonoBehaviour
         silicon++;
         sil.text="Silicone: " + silicon;
     }
-
+    private float UpdateDelta2;
     void Update()
     {
         UpdateDelta += Time.deltaTime;
-        if (UpdateDelta >= 1f)
+        if (UpdateDelta >= 10f)
         {
             UpdateDelta = 0;
             if (crawler >= 1)
             {
                 silicon += 1 * crawler;
+            }
+        }
+        UpdateDelta2 += Time.deltaTime;
+        if (UpdateDelta2 >= 5f)
+        {
+            UpdateDelta2 = 0;
+            if (atrax >= 1)
+            {
+                silicon += 1 * atrax;
             }
         }
         sil.text = "Silicone: " + silicon;

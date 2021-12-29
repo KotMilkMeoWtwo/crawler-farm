@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "420798578392",
+    "project_id": "crawler-farm",
+    "storage_bucket": "crawler-farm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420798578392:android:2e92f0f6e42b48781a61ad",
+        "android_client_info": {
+          "package_name": "com.kotmilkmeow.crawlerFarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420798578392-scm24tnteb4b451vcjm3c173hslpp2hb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBws4eMnh2S9x902ny-IlJuvB5z71G2QT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420798578392-scm24tnteb4b451vcjm3c173hslpp2hb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
